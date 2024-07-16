@@ -1,6 +1,6 @@
 <mvc:View
     controllerName="zov.controller.CustomerForm"
-	xmlns:core="sap.ui.core"
+    xmlns:core="sap.ui.core"
     xmlns:mvc="sap.ui.core.mvc"
     displayBlock="true"
     xmlns="sap.m"
@@ -12,6 +12,5 @@
         navButtonPress="onNavBack"
     >
         <content />
-
     </Page>
 </mvc:View>
