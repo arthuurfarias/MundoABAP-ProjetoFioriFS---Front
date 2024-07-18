@@ -6,197 +6,213 @@
     xmlns:m="sap.m"
     xmlns:t="sap.ui.table"
     xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:mdc="sap.ui.mdc"
+    xmlns:mdct="sap.ui.mdc.table"
 >
-    <Page
+    <!-- <Page
         id="page"
         title="{i18n>title}"
     >
-        <content />
+        <content /> -->
 
-        <t:Table
-            id="_IDGenTable1"
-            rows="{/OV_HeaderSet}"
-            class="sapUiSmallMargin"
-            selectionMode="MultiToggle"
-            paste="onPaste"
-            ariaLabelledBy="title"
-        >
-            <t:extension>
-                <m:OverflowToolbar
-                    id="_IDGenOverflowToolbar1"
-                    style="Clear"
-                >
-                    <m:Title
-                        id="title"
-                        text="Ordens"
+    <t:Table
+        id="_IDGenTable1"
+        rows="{/OV_HeaderSet}"
+        class="sapUiSmallMargin"
+        selectionMode="MultiToggle"
+        paste="onPaste"
+        ariaLabelledBy="title"
+    >
+        <t:extension>
+            <m:OverflowToolbar
+                id="_IDGenOverflowToolbar1"
+                style="Clear"
+            >
+                <m:Title
+                    id="title"
+                    text="Ordens"
+                />
+            </m:OverflowToolbar>
+        </t:extension>
+
+        <t:columns>
+            <t:Column
+                id="_IDGenColumn1"
+                sortProperty="OrdemID"
+                filterProperty="OrdemID"
+                autoResizable="true"
+                width="80px"
+            >
+                <m:Label
+                    id="_IDGenLabel1"
+                    text="{i18n>_IDGenColumn1}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText1"
+                        text="{OrdemID}"
+                        wrapping="false"
                     />
-                </m:OverflowToolbar>
-            </t:extension>
+                </t:template>
+            </t:Column>
 
-            <t:columns>
-                <t:Column
-                    id="_IDGenColumn1"
-                    sortProperty="OrdemID"
-                    filterProperty="OrdemID"
-                    autoResizable="true"
-                    width="80px"
-                >
-                    <m:Label
-                        id="_IDGenLabel1"
-                        text="{i18n>_IDGenColumn1}"
+            <t:Column
+                id="_IDGenColumn2"
+                sortProperty="DataCricao"
+                filterProperty="DataCricao"
+                autoResizable="true"
+                width="120px"
+            >
+                <m:Label
+                    id="_IDGenLabel2"
+                    text="{i18n>_IDGenColumn2}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText2"
+                        text="{path: 'DataCriacao', type: 'sap.ui.model.odata.type.Date', formatOptions: { UTC:true, pattern: 'dd/mm/yyyy'}}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText1"
-                            text="{OrdemID}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn2"
-                    sortProperty="DataCricao"
-                    filterProperty="DataCricao"
-                    autoResizable="true"
-                    width="120px"
-                >
-                    <m:Label
-                        id="_IDGenLabel2"
-                        text="{i18n>_IDGenColumn2}"
+            <t:Column
+                id="_IDGenColumn3"
+                sortProperty="CriadoPor"
+                filterProperty="CriadoPor"
+                autoResizable="true"
+                width="100px"
+            >
+                <m:Label
+                    id="_IDGenLabel3"
+                    text="{i18n>_IDGenColumn3}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText3"
+                        text="{CriadoPor}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText2"
-                            text="{path: 'DataCriacao', type: 'sap.ui.model.odata.type.Date', formatOptions: { UTC:true, pattern: 'dd/mm/yyyy'}}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn3"
-                    sortProperty="CriadoPor"
-                    filterProperty="CriadoPor"
-                    autoResizable="true"
-                    width="100px"
-                >
-                    <m:Label
-                        id="_IDGenLabel3"
-                        text="{i18n>_IDGenColumn3}"
+            <t:Column
+                id="_IDGenColumn4"
+                sortProperty="ClienteID"
+                filterProperty="ClienteID"
+                autoResizable="true"
+                width="80px"
+            >
+                <m:Label
+                    id="_IDGenLabel4"
+                    text="{i18n>_IDGenColumn4}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText4"
+                        text="{ClienteID}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText3"
-                            text="{CriadoPor}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn4"
-                    sortProperty="ClienteID"
-                    filterProperty="ClienteID"
-                    autoResizable="true"
-                    width="80px"
-                >
-                    <m:Label
-                        id="_IDGenLabel4"
-                        text="{i18n>_IDGenColumn4}"
+            <t:Column
+                id="_IDGenColumn5"
+                sortProperty="TotalItens"
+                filterProperty="TotalItens"
+                autoResizable="true"
+                width="90px"
+            >
+                <m:Label
+                    id="_IDGenLabel5"
+                    text="{i18n>_IDGenColumn5}"
+                />
+                <t:template>
+                    <!-- <m:Text
+                        id="_IDGenText5"
+                        text="{path: 'TotalItens', formatter: '.formatter.formatPrice'}"
+
+                        wrapping="false"
+                    /> -->
+                    <!-- <m:Text
+                        id="_IDGenText5"
+                        text="{parts: ['TotalItens'], type: 'sap.ui.model.type.currency', 
+                        formatOptions: {groupingEnabled: true, groupingSeparator: '.', decimalSeparator: ',', decimals: 2, showMeasure: false}}"
+
+                        wrapping="false"
+                    /> -->
+                    <m:Text
+                        id="_IDGenText5"
+                        text="{path: 'TotalItens', formatter: '.formatter.formatPrice'}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText4"
-                            text="{ClienteID}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn5"
-                    sortProperty="TotalItens"
-                    filterProperty="TotalItens"
-                    autoResizable="true"
-                    width="90px"
-                >
-                    <m:Label
-                        id="_IDGenLabel5"
-                        text="{i18n>_IDGenColumn5}"
+            <t:Column
+                id="_IDGenColumn6"
+                sortProperty="TotalFrete"
+                filterProperty="TotalFrete"
+                autoResizable="true"
+                width="90px"
+            >
+                <m:Label
+                    id="_IDGenLabel6"
+                    text="{i18n>_IDGenColumn6}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText6"
+                        text="{path: 'TotalFrete', formatter: '.formatter.formatPrice'}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText5"
-                            text="{TotalItens}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn6"
-                    sortProperty="TotalFrete"
-                    filterProperty="TotalFrete"
-                    autoResizable="true"
-                    width="90px"
-                >
-                    <m:Label
-                        id="_IDGenLabel6"
-                        text="{i18n>_IDGenColumn6}"
+            <t:Column
+                id="_IDGenColumn7"
+                sortProperty="TotalOrdem"
+                filterProperty="TotalOrdem"
+                autoResizable="true"
+                width="100px"
+            >
+                <m:Label
+                    id="_IDGenLabel7"
+                    text="{i18n>_IDGenColumn7}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText7"
+                        text="{path: 'TotalOrdem', formatter: '.formatter.formatPrice'}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText6"
-                            text="{TotalFrete}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
 
-                <t:Column
-                    id="_IDGenColumn7"
-                    sortProperty="TotalOrdem"
-                    filterProperty="TotalOrdem"
-                    autoResizable="true"
-                    width="100px"
-                >
-                    <m:Label
-                        id="_IDGenLabel7"
-                        text="{i18n>_IDGenColumn7}"
+            <t:Column
+                id="_IDGenColumn8"
+                sortProperty="Status"
+                filterProperty="Status"
+                autoResizable="true"
+                width="60px"
+            >
+                <m:Label
+                    id="_IDGenLabel8"
+                    text="{i18n>_IDGenColumn8}"
+                />
+                <t:template>
+                    <m:Text
+                        id="_IDGenText8"
+                        text="{Status}"
+                        wrapping="false"
                     />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText7"
-                            text="{TotalOrdem}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
+                </t:template>
+            </t:Column>
+        </t:columns>
+    </t:Table>
 
-                <t:Column
-                    id="_IDGenColumn8"
-                    sortProperty="Status"
-                    filterProperty="Status"
-                    autoResizable="true"
-                    width="60px"
-                >
-                    <m:Label
-                        id="_IDGenLabel8"
-                        text="{i18n>_IDGenColumn8}"
-                    />
-                    <t:template>
-                        <m:Text
-                            id="_IDGenText8"
-                            text="{Status}"
-                            wrapping="false"
-                        />
-                    </t:template>
-                </t:Column>
-            </t:columns>
-        </t:Table>
-
-        <!-- <Button id="_IDGenButton1"
+    <!-- <Button id="_IDGenButton1"
             text="Novo Cliente"
             press="onNewCustomer"
             ariaDescribedBy="defaultButtonDescription genericButtonDescription"
@@ -214,6 +230,31 @@
             <layoutData>
                 <FlexItemData id="_IDGenFlexItemData2" growFactor="1" />
             </layoutData>
-        </Button> -->
-    </Page>
+        </Button>
+    </Page> -->
+
+    <!-- <f:DynamicPage id="page">
+        <f:content>
+            <mdc:Table
+                id="table"
+                header="{i18n>title}"
+                p13nMode="Column,Sort,Group,Filter"
+                type="ResponsiveTable"
+                threshold="25"
+                showRowCount="false"
+                useColumnLabelsAsTooltips="true"
+            >
+                <mdct:Column
+                    id="_IDGenColumn1"
+                    propertyKey="OrdemID"
+                    header="{i18n>_IDGenColumn1}"
+                >
+                    <Text
+                        id="_IDGenText1"
+                        text="{OrdemID}"
+                    />
+                </mdct:Column>
+            </mdc:Table>
+        </f:content>
+    </f:DynamicPage> -->
 </mvc:View>
